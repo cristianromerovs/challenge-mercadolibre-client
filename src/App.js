@@ -1,9 +1,13 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import MyNav from './components/MyNav'
-import { Compras } from './components/pages/Compras'
-import { Profile } from './components/pages/Profile'
-import { NotFound } from './components/pages/NotFound'
+import { MyNav } from './Components/MyNav'
+import { Compras } from './Pages/Compras'
+import { Profile } from './Pages/Profile'
+import { NotFound } from './Pages/NotFound'
+import { Home } from './Pages/Home'
+
+import Container from 'react-bootstrap/Container';
+import { Footer } from './Components/Footer'
 
 function App() {
 
@@ -33,17 +37,18 @@ function App() {
   //   </div>
   // )
 
-  const Home = () => <h1>Inicio</h1>
-
   return (
     <>
       <MyNav />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/profile' element={<Profile/>}></Route>
-        <Route path='/compras/:id/' element={<Compras/>} />
-        <Route path='*' element={<NotFound />}></Route>
-      </Routes>
+      <Container>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/profile' element={<Profile />}></Route>
+          <Route path='/compras/:id/' element={<Compras />} />
+          <Route path='*' element={<NotFound />}></Route>
+        </Routes>
+      </Container>
+      <Footer/>
     </>
   )
 }

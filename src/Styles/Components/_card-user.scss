@@ -1,0 +1,34 @@
+.card-user {
+    background-color: $color-white;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .12));
+
+    .img-placeholder {
+        height: 68px;
+        width: 68px;
+        background-color: $color-gray;
+        border-radius: 50%;
+    }
+
+    .card-user__nivel,
+    .card-user__restricciones,
+    .card-user__nick {
+        color: $color-black-2;
+        font-size: $font-normal;
+        font-weight: 400;
+    }
+
+    .card-user__restricciones {
+        color: $color-gray-2;
+        font-size: ($font-normal - 1px);
+        font-style: italic;
+    }
+
+    .card-user__nombre {
+        color: $color-black-2;
+        font-size: $font-normal + 2px;
+        font-weight: 600;
+    }
+}

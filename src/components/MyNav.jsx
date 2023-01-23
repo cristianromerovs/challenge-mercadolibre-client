@@ -2,10 +2,13 @@ import { Link, NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useState } from "react";
 
 export const MyNav = () => {
+  const [expanded, setExpanded] = useState(false);
+
   return (
-    <Navbar className="navbar__custom navbar-expand-lg" expand="lg">
+    <Navbar className="navbar__custom" expand="lg" expanded={expanded}>
       <Container>
         <Link to="/" className="navbar-brand">
           <img
@@ -16,18 +19,20 @@ export const MyNav = () => {
             alt="React Bootstrap logo"
           />
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-toggle='collapse' data-target='#basic-navbar-nav'/>
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="navbarScroll" onClick={() => setExpanded(!expanded)}/>
+        <Navbar.Collapse id="navbarScroll">
           <Nav className="ms-auto">
             <NavLink
               to="/"
               className={({ isActive }) => "nav-link " + (isActive && "active")}
+              onClick={() => setExpanded(false)}
             >
               Inicio
             </NavLink>
             <NavLink
               to="/profile"
               className={({ isActive }) => "nav-link " + (isActive && "active")}
+              onClick={() => setExpanded(false)}
             >
               Mi cuenta
             </NavLink>

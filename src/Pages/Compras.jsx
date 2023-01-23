@@ -1,9 +1,17 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import Row from "react-bootstrap/esm/Row";
+import { AsideDetalle } from "../Components/AsideDetalle";
+import { CardDetalle } from "../Components/CardDetalle";
+import { MyBreadCrumb } from "../Components/MyBreadCrumb";
 
 export const Compras = () => {
-    const {id} = useParams()
+  // const {id} = useParams()
   return (
-    <div>Compra id: {id}</div>
-  )
-}
+    <>
+      <MyBreadCrumb routesForBreadcrumb={["/", "/Profile", "/Compras"]} />
+      <Row>
+        <CardDetalle />
+        <AsideDetalle />
+      </Row>
+    </>
+  );
+};

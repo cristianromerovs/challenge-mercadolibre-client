@@ -1,11 +1,12 @@
 //Colores
 $color-main: #fff159;
 $color-blue: #3483fa;
-$color-black: rgba(51,51,51,.6);
-$color-black-2: rgba(0,0,0,.9);
+$color-green: #00a650;
+$color-black: #33333399;
+$color-black-2: #000000e6;
 $color-black-3: #333;
 $color-gray: #ededed;
-$color-gray-2: rgba(0,0,0,.55);
+$color-gray-2: #0000008c;
 $color-white: #fff;
 
 //Font-Sizes
@@ -41,6 +42,40 @@ $screen-xxl-min: 1400px;
 @mixin mq-xxl {
     @media only screen and (min-width: $screen-xxl-min) {
         @content;
+    }
+}
+
+//Mixin Cards
+@mixin card-ml {
+    background-color: $color-white;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .12));
+}
+
+//Mixin placeholder
+@mixin img-placeholder {
+    background-color: $color-gray;
+    border-radius: 50%;
+    animation: placeholderGlow 2s ease-in-out infinite;
+
+    @keyframes placeholderGlow {
+        from {
+            opacity: 1;
+        }
+        25% {
+            opacity: .75;
+        }
+        50% {
+            opacity: .5;
+        }
+        75% {
+            opacity: .25;
+        }
+        to {
+            opacity: 1;
+        }
     }
 }
 

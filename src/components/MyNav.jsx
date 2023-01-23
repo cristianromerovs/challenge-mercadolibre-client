@@ -1,13 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import { Link, NavLink } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
 export const MyNav = () => {
   return (
-    <Navbar className="navbar__custom" expand="lg">
+    <Navbar className="navbar__custom navbar-expand-lg" expand="lg">
       <Container>
         <Link to="/" className="navbar-brand">
           <img
@@ -18,15 +16,21 @@ export const MyNav = () => {
             alt="React Bootstrap logo"
           />
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-toggle='collapse' data-target='#basic-navbar-nav'/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Link to="/" className="nav-link">
+            <NavLink
+              to="/"
+              className={({ isActive }) => "nav-link " + (isActive && "active")}
+            >
               Inicio
-            </Link>
-            <Link to="/profile" className="nav-link">
+            </NavLink>
+            <NavLink
+              to="/profile"
+              className={({ isActive }) => "nav-link " + (isActive && "active")}
+            >
               Mi cuenta
-            </Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

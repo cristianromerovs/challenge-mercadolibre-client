@@ -1,15 +1,10 @@
 .card-user {
-    background-color: $color-white;
-    border-radius: 6px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    filter: drop-shadow(0 0 1px rgba(0, 0, 0, .12));
+    @include card-ml;
 
     .img-placeholder {
+        @include img-placeholder;
         height: 68px;
         width: 68px;
-        background-color: $color-gray;
-        border-radius: 50%;
     }
 
     .card-user__nivel,

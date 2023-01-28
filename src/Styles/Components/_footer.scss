@@ -1,13 +1,13 @@
 .footer-ml {
     background-color: $color-white;
     min-height: 86px;
-    position: relative;
+    position: absolute;
     bottom: 0;
     width: 100%;
     padding: 16px 0;
 
     @include mq-md {
-        position: absolute;
+        position: relative;
     }
 
     .footer__top-item,

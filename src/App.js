@@ -6,50 +6,24 @@ import { Profile } from './Pages/Profile'
 import { NotFound } from './Pages/NotFound'
 import { Home } from './Pages/Home'
 
-import Container from 'react-bootstrap/Container';
 import { Footer } from './Components/Footer'
 
+import { QueryClientProvider, QueryClient } from "react-query"
+
+const queryClient = new QueryClient();
+
 function App() {
-
-  // const [backendData, setBackendData] = useState([{}])
-
-  // useEffect(() => {
-  //   fetch("/api")
-  //     .then(
-  //       response => response.json()
-  //     )
-  //     .then(
-  //       data => {
-  //         setBackendData(data)
-  //       }
-  //     )
-  // }, [])
-
-  // return (
-  //   <div>
-  //     {(typeof backendData.users === 'undefined') ? (
-  //       <p>Cargando Datos...</p>
-  //     ) : (
-  //       backendData.users.map((user, i) => (
-  //         <p key={i}>{user}</p>
-  //       ))
-  //     )}
-  //   </div>
-  // )
-
   return (
-    <>
+    <QueryClientProvider client={ queryClient }>
       <MyNav />
-      <Container>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/profile' element={<Profile />}></Route>
-          <Route path='/compras/:id/' element={<Compras />} />
-          <Route path='*' element={<NotFound />}></Route>
-        </Routes>
-      </Container>
-      <Footer/>
-    </>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />}></Route>
+        <Route path='/compras/:id/' element={<Compras />} />
+        <Route path='*' element={<NotFound />}></Route>
+      </Routes>
+      <Footer />
+    </QueryClientProvider>
   )
 }
 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export const Footer = () => {
   return (
-    <div className='footer-ml d-flex align-items-center'>
+    <footer className='footer-ml d-flex align-items-center'>
         <Container>
             <Row className='justify-content-center'>
                 <Col xs={12} md={10} xl={8}>
@@ -23,6 +23,6 @@ export const Footer = () => {
                 </Col>
             </Row>
         </Container>
-    </div>
+    </footer>
   )
 }
